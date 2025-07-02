@@ -76,11 +76,16 @@ export async function getCorses(deptId, deptCourseNum) {
             let $row = $(row);
             let $cells = $row.children('td');
 
-            let td0 = $cells.eq(0);            
-            // 提取課程ID，格式可能是 "01001\nPE1011-A" 或類似格式
-            let courseIdParts = td0.text().split('\n').filter(part => part.trim() !== '');
-            let serialNum = courseIdParts[0].trim(); // 取第一部分作為序號
-            let courseId = courseIdParts[1]?.trim() || ''; // 取第二部分作為課程ID
+            let td0 = $cells.eq(0);
+
+            // 取得 HTML 並將 <br> 替換為 \n，再提取文字
+            let htmlContent = td0.html() || '';
+            let textWithNewlines = htmlContent.replace(/<br\s*\/?>/gi, '\n');
+            let plainText = cheerio.load(`<div>${textWithNewlines}</div>`)('div').text();
+
+            let courseIdParts = plainText.split('\n').filter(part => part.trim() !== '');
+            let serialNum = courseIdParts[0]?.trim() || '';
+            let courseId = courseIdParts[1]?.trim() || '';
 
             // 課程名稱
             let td1 = $cells.eq(1);

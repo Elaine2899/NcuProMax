@@ -1,4 +1,4 @@
-import { getDepts, getCorses } from '../Courses/testGetCourses.js';
+import { getDepts, getCorses } from '../Courses/getCourses.js';
 import fs from 'fs';
 import path from 'path';
 

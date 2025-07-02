@@ -4,9 +4,13 @@ import path from 'path';
 
 let colleges = await getDepts();
 colleges.forEach(college => {
+    console.log()
+    console.log()
+
     console.log(`${college.collegeId}: ${college.collegeName}`)
     college.departments.forEach(dept => {
         console.log(`  學系: ${dept.deptName}`)
+        console.log(`  學系課程數: ${dept.deptCourseNum}`);
     })
 })
 
@@ -20,7 +24,7 @@ for (let [collegeID, college] of colleges.entries()) {
     for (let [deptID, dept] of depts.entries()) {
         console.log(`  正在獲取 ${dept.deptName} 的課程...`);
         try {
-            let courses = await getCorses(dept.deptId);
+            let courses = await getCorses(dept.deptId, dept.deptCourseNum);
             
             // 為每個課程添加學院和科系資訊
             if (courses && courses.length > 0) {

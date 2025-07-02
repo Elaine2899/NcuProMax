@@ -27,3 +27,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+### 抓取課程資料
+```sh
+npm run get
+```

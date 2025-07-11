@@ -27,6 +27,10 @@ header {
   margin: 0 auto 2rem;
 }
 
+main {
+  padding: 1rem;
+}
+
 @media (min-width: 1024px) {
   header {
     display: flex;

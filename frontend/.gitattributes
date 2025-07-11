@@ -1,1 +1,14 @@
+# 自動偵測文字檔案並正規化行尾符號
 * text=auto eol=lf
+
+# 明確指定程式碼檔案
+*.js text eol=lf
+*.json text eol=lf
+*.vue text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+
+# 二進位檔案不處理
+*.png binary
+*.jpg binary
+*.gif binary

@@ -7,10 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "fet": "node src/Courses/getDepts.js",
+    "get": "node src/core/getCourse.js"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0",
+    "vue": "^3.5.13",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",

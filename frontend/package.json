@@ -15,12 +15,22 @@
     "axios": "^1.10.0",
     "cheerio": "^1.1.0",
     "vue": "^3.5.13",
+    "vue-router": "^4.5.1",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
+    "eslint-plugin-vue": "^9.x.x",
     "prettier": "3.5.3",
     "vite": "^6.2.4",
     "vite-plugin-vue-devtools": "^7.7.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:vue/vue3-essential"
+    ],
+    "rules": {
+      "vue/no-multiple-template-root": "off"
+    }
   }
 }
